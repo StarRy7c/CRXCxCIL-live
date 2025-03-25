@@ -121,8 +121,10 @@
         <div id="jwplayerDiv"></div>
     </div>
     <div class="button-container">
-        <button class="control-button" onclick="changeStream('https://vkvsd63.okcdn.ru/cmaf/7966929783340/sig/9UkVMO3MPCY/srcIp/172.69.178.235/urls/45.136.22.58/expires/1743195272733/clientType/13/srcAg/CHROME/fromCache/1/mid/9319446489900/id/7966929783340/get/hls_9319446489900.OnURj29hmec.m3u8')">hotstar 2</button>--
+
+        <button class="control-button" onclick="changeStream('https://mtsft.ruscfd.lat/480p.m3u8')">hotstar</button>--
        
+        <button class="control-button" onclick="changeStream('https://vkvsd63.okcdn.ru/cmaf/7966929783340/sig/9UkVMO3MPCY/srcIp/172.69.178.235/urls/45.136.22.58/expires/1743195272733/clientType/13/srcAg/CHROME/fromCache/1/mid/9319446489900/id/7966929783340/get/hls_9319446489900.OnURj29hmec.m3u8')">hotstar 2</button>
         <button class="control-button" onclick="loadIframe('https://crichype.fun/p/?id=English')">Watch in English</button>
         <button class="control-button" onclick="loadIframe('https://crichype.fun/p/?id=Hindi')">Watch in Hindi</button>
         <button class="refresh-button" onclick="location.reload()">Refresh Page</button>
@@ -145,7 +147,7 @@
                 title: "UEFA Youth League 2024-25",
                 description: "You're Watching",
                 sources: [{ 
-                    file: "https://mtsft.ruscfd.lat/720p.m3u8", 
+                    file: "https://channel5.csports.tv/1030826119/index.m3u8", 
                     type: "hls", 
                     label: "1080p", 
                     default: true 
@@ -156,7 +158,10 @@
             autostart: true,
             controls: true
         });
-
+function changeStream(url) {
+            player.load([{ file: url, type: "hls" }]);
+            player.play();
+}
         function loadIframe(url) {
             document.getElementById("videoContainer").innerHTML = `<iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="true" scrolling="no" width="100%" height="200%" src="${url}"></iframe>`;
         }

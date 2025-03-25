@@ -1,4 +1,64 @@
-sorry for inconvenience 😞 kalse koi problem nhi aayegi website pe copyright ©️ bahut arahe hai koi server work nhi kar raha jada time
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+</head>
+<body>
+
+    <h2>Live Chat 💬</h2>
+    <div id="chat-box"></div>
+    
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFwXaeCi-oI-3A6ViSC3DRIzCEJdnD3Uc",
+            authDomain: "live-chat-2f5fc.firebaseapp.com",
+            databaseURL: "https://live-chat-2f5fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "live-chat-2f5fc",
+            storageBucket: "live-chat-2f5fc.appspot.com",
+            messagingSenderId: "465541344580",
+            appId: "1:465541344580:web:826b4d4828de3ee11e7b11"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Reference messages in Firebase
+        const chatRef = ref(database, "messages");
+
+        // Send Message Function
+        function sendMessage() {
+            let messageInput = document.getElementById("messageInput");
+            let message = messageInput.value;
+
+            if (message.trim() !== "") {
+                push(chatRef, {
+                    text: message
+                });
+                messageInput.value = "";
+            }
+        }
+
+        // Display Messages
+        onChildAdded(chatRef, (data) => {
+            let chatBox = document.getElementById("chat-box");
+            let p = document.createElement("p");
+            p.textContent = data.val().text;
+            chatBox.appendChild(p);
+        });
+    </script>
+
+</body>
+</html>sorry for inconvenience 😞 kalse koi problem nhi aayegi website pe copyright ©️ bahut arahe hai koi server work nhi kar raha jada time
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

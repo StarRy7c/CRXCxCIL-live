@@ -111,9 +111,9 @@ use permanent link for a while
         aspectratio: "16:9"
       });
     }
-    function loadIframe(url) {
-      document.getElementById("contentContainer").innerHTML = '<iframe id="contentFrame" src="' + url + '" allowfullscreen="true" scrolling="no"></iframe>';
-    }
+        function loadIframe() {
+      document.getElementById("contentContainer").innerHTML = '<iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" allowfullscreen="true" scrolling="no" src="https://stream.cricktv.site/ss1hi"></iframe>';
+        }
     function openLivePage(url) {
       window.location.href = url;
     }

@@ -117,25 +117,8 @@ use permanent link for a while
     function openLivePage(url) {
       window.location.href = url;
     }
-    <script>
-  let currentIframeUrl = ""; // Store the URL globally
+    
 
-  function setIframeUrl(url) {
-    currentIframeUrl = url;
-    loadIframe(); // Call existing function without modifying it
-  }
-
-  function loadIframe() {
-    document.getElementById("contentContainer").innerHTML = 
-      '<iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" allowfullscreen="true" scrolling="no" src="' + currentIframeUrl + '"></iframe>';
-  }
-</script>
-
-<!-- Buttons that set the URL and then call loadIframe -->
-<div class="btn-container">
-  <button class="btn" onclick="setIframeUrl('https://ok.ru/videoembed/9823236333233?autoplay=1&amp;mute=0')">Smooth Fast</button>
-  <button class="btn" onclick="setIframeUrl('https://live.starsports.news/lunar-ipl-hindi')">Hindi Permanent</button>
-</div>
 
 <!-- Container where the iframe will be loaded -->
 <div id="contentContainer"></div>

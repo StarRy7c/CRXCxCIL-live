@@ -1,5 +1,4 @@
-use permanent link for a while
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,7 +36,7 @@ use permanent link for a while
     }
     iframe {
       width: 100%;
-      height: 250px;
+      height: 450px;
       border: none;
     }
     .btn-container {
@@ -61,7 +60,7 @@ use permanent link for a while
     .telegram-strip {
       position: fixed;
       bottom: 0;
-      width: 90%;
+      width: 100%;
       background: linear-gradient(135deg, #ff7e5f, #feb47b);
       color: white;
       text-align: center;
@@ -95,7 +94,7 @@ use permanent link for a while
   </div>
   <script>
     jwplayer("jwplayerDiv").setup({
-      file: "https://myctxa.temycssme.wiki/720p.m3u8",
+      file: "https://1a-1791.com/live/r31jzt5k/live-hls/j9la-zn7k/chunklist_i2_DVR.m3u8",
       autostart: true,
       controls: true,
       width: "100%",
@@ -111,28 +110,21 @@ use permanent link for a while
         aspectratio: "16:9"
       });
     }
-        function loadIframe() {
-      document.getElementById("contentContainer").innerHTML = '<iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" allowfullscreen="true" scrolling="no" src="https://ok.ru/videoembed/9823236333233?autoplay=1&amp;mute=0"></iframe>';
-        }
+    function loadIframe(url) {
+      document.getElementById("contentContainer").innerHTML = '<iframe id="contentFrame" src="' + url + '" allowfullscreen="true" scrolling="no"></iframe>';
+    }
     function openLivePage(url) {
       window.location.href = url;
     }
-    
-
-
-<!-- Container where the iframe will be loaded -->
-<div id="contentContainer"></div>
   </script>
   <a href="https://instagram.com/nyx.z_" target="_blank" class="insta-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
   </a>
   <div class="btn-container">
-    <!--button class="btn" onclick="openLivePage('https://crxcs.blogspot.com/p/sport-live-stardust.html?link=https://iframv2.embedxt.site/iframe/frame.php&m=1')">!</button>
-    <--button class="btn" onclick="changeVideo('https://psplay.site/ipl/eng/master.m3u8?id=eng')">English</button>
-    <--button class="btn" onclick="changeVideo('https://1a-1791.com/live/v0xi25uh/slot-111/rgci-lz9s_1080p/chunklist_DVR.m3u8')">Sky Sport</button-->
-       <button class="btn" onclick="loadIframe('https://ok.ru/videoembed/9823236333233?autoplay=1&amp;mute=0')">smooth fast</button>
-<button class="btn" onclick="loadIframe('https://live.starsports.news/lunar-ipl-hindi')">hindi permanent</button>
-    
+    <button class="btn" onclick="openLivePage('https://crxcs.blogspot.com/p/sport-live-stardust.html?link=https://iframv2.embedxt.site/iframe/frame.php&m=1')">!</button>
+    <button class="btn" onclick="changeVideo('https://psplay.site/ipl/eng/master.m3u8?id=eng')">English</button>
+    <button class="btn" onclick="changeVideo('https://1a-1791.com/live/v0xi25uh/slot-111/rgci-lz9s_1080p/chunklist_DVR.m3u8')">Sky Sport</button>
+    <button class="btn" onclick="loadIframe('https://crxcs.blogspot.com/p/sport-live-stardust.html?link=https://iframv2.embedxt.site/iframe/frame.php&m=1')">Hindi</button>
   </div>
   <div class="telegram-strip">
     📢 Join our Telegram for Live Updates!

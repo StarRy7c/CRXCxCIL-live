@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream</title>
+  <script src="https://cdn.jwplayer.com/libraries/yourjwplayerkey.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn {
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+    }
+    .telegram-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0088cc;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4">
+  <div id="contentContainer" class="w-full max-w-4xl">
+    <div id="jwplayerDiv"></div>
+  </div>
+  <div class="flex gap-4 mt-6">
+    <button class="btn bg-blue-500 px-6 py-3 rounded-xl shadow-lg" onclick="changeVideo('https://psplay.site/ipl/eng/master.m3u8?id=eng')">English</button>
+    <button class="btn bg-green-500 px-6 py-3 rounded-xl shadow-lg" onclick="changeVideo('https://1a-1791.com/live/v0xi25uh/slot-111/rgci-lz9s_1080p/chunklist_DVR.m3u8')">Sky Sport</button>
+    <button class="btn bg-red-500 px-6 py-3 rounded-xl shadow-lg" onclick="loadIframe('https://crxcs.blogspot.com/p/sport-live-stardust.html?link=https://iframv2.embedxt.site/iframe/frame.php&m=1')">Hindi</button>
+  </div>
+  <script>
+    jwplayer("jwplayerDiv").setup({
+      file: "https://myctxa.temycssme.wiki/720p.m3u8",
+      autostart: true,
+      controls: true,
+      width: "100%",
+      aspectratio: "16:9"
+    });
+    function changeVideo(url) {
+      document.getElementById("contentContainer").innerHTML = '<div id="jwplayerDiv"></div>';
+      jwplayer("jwplayerDiv").setup({ file: url, autostart: true, controls: true, width: "100%", aspectratio: "16:9" });
+    }
+    function loadIframe(url) {
+      document.getElementById("contentContainer").innerHTML = '<iframe id="contentFrame" src="' + url + '" allowfullscreen scrolling="no" class="w-full h-96"></iframe>';
+    }
+  </script>
+  <div class="telegram-popup" onclick="window.open('https://t.me/+bdfr3H7NBwwyZDZl', '_blank')">
+    📢 Join our Telegram for Live Updates! 🚀
+  </div>
+</body>
+</html>
+<!--DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Telegram Link</title>

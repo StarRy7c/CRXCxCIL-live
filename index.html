@@ -1,6 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Streaming</title>
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #playerContainer {
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-fox { background: #3b82f6; color: white; }
+        .btn-sky { background: #22c55e; color: white; }
+        .btn-hindi { background: #ef4444; color: white; }
+        .btn:hover { transform: scale(1.1); }
+        .telegram-popup {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0077b6;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.5s ease-out;
+        }
+        .telegram-popup a {
+            color: yellow;
+            text-decoration: none;
+        }
+        @keyframes slideUp {
+            from { transform: translateX(-50%) translateY(50px); opacity: 0; }
+            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="playerContainer">
+        <div id="jwplayerDiv"></div>
+    </div>
+    <div class="btn-container">
+        <button class="btn btn-fox" onclick="changeVideo('https://fox-stream-url.m3u8')">Fox</button>
+        <button class="btn btn-sky" onclick="changeVideo('https://sky-sport-stream-url.m3u8')">Sky Sport</button>
+        <button class="btn btn-hindi" onclick="changeVideo('https://hindi-stream-url.m3u8')">Hindi</button>
+    </div>
+    <div class="telegram-popup">
+        📢 Join our <a href="https://t.me/example" target="_blank">Telegram</a> for Live Updates! 🚀
+    </div>
+    <script>
+        jwplayer("jwplayerDiv").setup({
+            file: "https://fox-stream-url.m3u8",
+            autostart: true,
+            controls: true,
+            width: "100%",
+            aspectratio: "16:9"
+        });
+        function changeVideo(url) {
+            jwplayer("jwplayerDiv").load([{ file: url }]);
+            jwplayer("jwplayerDiv").play();
+        }
+    </script>
+</body>
+</html>
+<!--DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Live Stream</title>

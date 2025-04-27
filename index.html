@@ -2,6 +2,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Streaming - MI vs LSG 2025</title>
+  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #playerContainer {
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+    .btn-container {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-hindi { background: #ef4444; color: white; }
+    .btn-english { background: #3b82f6; color: white; }
+    .btn-sky { background: #22c55e; color: white; }
+    .btn:hover { transform: scale(1.1); }
+  </style>
+</head>
+
+<body>
+
+  <h1>!PL 2025🔥 MI VS LSG</h1>
+
+  <div id="playerContainer">
+    <div id="jwplayerDiv"></div>
+  </div>
+
+  <div class="btn-container">
+    <button class="btn btn-hindi" onclick="playStream('https://v18tataplaysyndication.akamaized.net/bpk-tv/StarSports_2_Hin_HD_voot_MOB/output03/index.m3u8?hdnea=exp=1745758485~acl=/*~hmac=9fe920b5189193fd4775884ef945ccc5eb8e3b5ec4bc3261ba3b320140b98c18')">Sport's 2 Hindi FHD</button>
+
+    <button class="btn btn-hindi" onclick="playStream('https://m3u8x2.cloudycx.net/media/hls/files/index.m3u8')">Hindi FHD</button>
+
+    <button class="btn btn-hindi" onclick="playStream('https://starsporthindii.pages.dev/index.m3u8')">Hindi HD 1</button>
+
+    <button class="btn btn-hindi" onclick="playStream('https://embed.madplay.site/stream/crichd/master.m3u8/?id=starhindi')">Hindi HD 2</button>
+
+    <button class="btn btn-english" onclick="playStream('https://embed.madplay.site/stream/crichd/master.m3u8/?id=star1in')">English HD</button>
+
+    <button class="btn btn-sky" onclick="playStream('https://embed.madplay.site/stream/crichd/master.m3u8/?id=skyscric')">Sky Sports HD</button>
+  </div>
+
+  <script>
+    const player = jwplayer("jwplayerDiv").setup({
+      file: "https://hssportsprepack.akamaized.net/videos/cricket/1271337416/1540040200/in/eng/v2/avc/1743193368509/hls/plain/master_DVaSr5zbSVAdnj2a_full_sd.m3u8",
+      autostart: true,
+      controls: true,
+      width: "100%",
+      aspectratio: "16:9"
+    });
+
+    function playStream(url) {
+      player.load([{ file: url }]);
+      player.play();
+    }
+  </script>
+
+  <br><br>
+
+  <a href="https://telegram.me/+jXFxo1HWPlphZTU1" target="_blank" style="
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    padding: 10px;
+    background: #0088cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  ">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" width="20" style="margin-right: 10px;">
+    Join Us on Telegram
+  </a>
+
+</body>
+</html><!--DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Streaming</title>
@@ -69,10 +168,10 @@
         <button class="btn btn-sky" onclick="changeVideo('https://live-test.tsports.com/live-02/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=17436002443600~hmac=1fdfe8ddcbf56e3eefcb254f9facdca9e6fce112f92dcf335b77a9a930116421')">t-sport smooth</button>
         <!--button class="btn btn-hindi" onclick="changeVideo('https://abmyxykaaaaaaaamkyvb65fuqebyg.7a77200bf98444ac997a89ed83775793.emt.')">willow working</button-->
     </div>
-    <div class="telegram-popup">
+    <--div class="telegram-popup">
         📢 Join our <a href="https://t.me/+aipK2mToZ8piMmNl" target="_blank">Telegram</a> for Live Updates! 🚀
     </div>
-    <script>
+    <--script>
         jwplayer("jwplayerDiv").setup({
             file: "https://starsporthindi.pages.dev/index.m3u8",
             autostart: true,
@@ -84,7 +183,7 @@
             jwplayer("jwplayerDiv").load([{ file: url }]);
             jwplayer("jwplayerDiv").play();
         }
-    </script>
+    <!--script>
 </body>
 </html>
 <!DOCTYPE html>

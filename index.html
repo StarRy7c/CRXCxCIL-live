@@ -3,6 +3,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Stream Selector</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .fade {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center p-6">
+
+  <h1 class="text-4xl font-bold mb-6 text-purple-400">Choose Your Stream</h1>
+
+  <div id="buttonContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 w-full max-w-4xl fade"></div>
+
+  <div class="w-full max-w-4xl aspect-video">
+    <iframe id="playerFrame" class="w-full h-full rounded-xl shadow-xl transition-all duration-500" 
+      src="https://p.apeiria.net/~Teamrom3u8plyr.html" 
+      frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+  const streamOptions = [
+    { label: 'English', value: 'eng' },
+    { label: 'Hindi', value: 'hin' },
+    { label: 'Tamil', value: 'tam' },
+    { label: 'Telugu', value: 'tel' },
+    { label: 'Bengali', value: 'ben' },
+    { label: 'Gujarati', value: 'guj' },
+    { label: 'Bhojpuri', value: 'bho' },
+    { label: 'Batter Cam', value: 'batter_cam' },
+    { label: 'Field View', value: 'fieled_view_cam' },
+    { label: 'Hero Cam', value: 'hero_cam' },
+    { label: 'Stump Cam', value: 'stump_cam' }
+  ];
+
+  const buttonContainer = document.getElementById('buttonContainer');
+  const playerFrame = document.getElementById('playerFrame');
+
+  streamOptions.forEach(option => {
+    const btn = document.createElement('button');
+    btn.textContent = option.label;
+    btn.className = "px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold shadow transition-all duration-300";
+    btn.onclick = () => updatePlayerStream(option.value);
+    buttonContainer.appendChild(btn);
+  });
+
+  function updatePlayerStream(psValue) {
+    const streamUrl = `https://pstvplaylive.online/2025/ps_ipl-liv.m3u8?ps=${psValue}`;
+    const playerUrl = `https://starry7c.github.io/Nishk-player/?stream=${encodeURIComponent(streamUrl)}`;
+    playerFrame.src = playerUrl;
+  }
+
+  // Play Hindi stream by default on load
+  updatePlayerStream('hin');
+  </script>
+</body>
+</html><!--DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CRiXzY</title>
   <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
